@@ -8,35 +8,7 @@ export default function AboutPage() {
   return (
     <>
       <SiteHeader />
-      <main className="pt-24">
-
-        {/* Hero */}
-        <section className="relative h-[819px] flex items-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/stitch/about/hero.jpg"
-              alt="Luxurious modern interior with bespoke wooden cabinetry in a high-end Pretoria residence"
-              fill priority
-              className="object-cover"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-[#173128]/30 mix-blend-multiply" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#fdf9f5] via-transparent to-transparent" />
-          </div>
-          <div className="relative z-10 w-full">
-            <Container>
-              <div className="max-w-3xl">
-                <span className="inline-block py-1 px-3 bg-[#8a4f31] text-white text-[10px] tracking-[0.2em] uppercase font-bold mb-6 font-body">
-                  Established 2019
-                </span>
-                <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] tracking-tighter mb-8 drop-shadow-sm font-headline">
-                  Built Around Quality,<br />Detail, and Custom<br />Craftsmanship
-                </h1>
-                <div className="w-24 h-1 bg-[#8a4f31]" />
-              </div>
-            </Container>
-          </div>
-        </section>
+      <main className="pt-32">
 
         {/* Company Story */}
         <section className="py-32">

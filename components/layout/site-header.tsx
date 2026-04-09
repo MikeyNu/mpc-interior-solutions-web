@@ -28,10 +28,15 @@ export function SiteHeader() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  // Pages whose hero sits directly behind the fixed nav with a dark photo.
+  // All other pages start on cream/light backgrounds — always use the solid style.
+  const hasDarkHero = pathname === "/";
+  const isLight = !hasDarkHero || scrolled;
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${
-        scrolled
+        isLight
           ? "bg-[#fdf9f5]/96 backdrop-blur-xl shadow-[0_1px_0_0_rgba(28,28,25,0.07)]"
           : "bg-transparent"
       }`}
@@ -42,7 +47,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className={`text-[15px] font-semibold tracking-tight transition-colors duration-500 font-body whitespace-nowrap ${
-            scrolled ? "text-[#173128]" : "text-white"
+            isLight ? "text-[#173128]" : "text-white"
           }`}
         >
           MPC Interior Solutions
@@ -55,7 +60,7 @@ export function SiteHeader() {
               key={href}
               href={href}
               className={`relative group text-[11px] uppercase tracking-[0.2em] font-semibold pb-3 transition-colors duration-500 font-body ${
-                scrolled
+                isLight
                   ? isActive(href)
                     ? "text-[#173128]"
                     : "text-[#173128]/50 hover:text-[#173128]"
@@ -80,7 +85,7 @@ export function SiteHeader() {
           <Link
             href="/quote"
             className={`hidden md:inline-block text-[10px] uppercase tracking-[0.28em] font-semibold px-7 py-2.5 transition-all duration-500 font-body ${
-              scrolled
+              isLight
                 ? "bg-[#173128] text-white hover:opacity-80"
                 : "border border-white/40 text-white hover:border-white hover:text-white"
             }`}
@@ -89,7 +94,7 @@ export function SiteHeader() {
           </Link>
           <button
             className={`md:hidden p-1 transition-colors duration-500 ${
-              scrolled ? "text-[#173128]" : "text-white"
+              isLight ? "text-[#173128]" : "text-white"
             }`}
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -105,7 +110,7 @@ export function SiteHeader() {
       {/* Hairline separator — only visible once scrolled */}
       <div
         className={`absolute bottom-0 left-0 right-0 h-px bg-[#c1c8c4]/25 transition-opacity duration-500 ${
-          scrolled ? "opacity-100" : "opacity-0"
+          isLight ? "opacity-100" : "opacity-0"
         }`}
       />
 
@@ -113,7 +118,7 @@ export function SiteHeader() {
       {menuOpen && (
         <div
           className={`md:hidden border-t px-6 py-10 space-y-7 ${
-            scrolled
+            isLight
               ? "bg-[#fdf9f5] border-[#c1c8c4]/20"
               : "bg-[#0c0a08]/97 border-white/10"
           }`}
@@ -123,7 +128,7 @@ export function SiteHeader() {
               key={href}
               href={href}
               className={`block text-[11px] uppercase tracking-[0.25em] font-semibold font-body transition-colors ${
-                scrolled
+                isLight
                   ? isActive(href)
                     ? "text-[#173128]"
                     : "text-[#173128]/50 hover:text-[#173128]"
@@ -142,7 +147,7 @@ export function SiteHeader() {
           <Link
             href="/quote"
             className={`inline-block text-[10px] uppercase tracking-[0.28em] font-semibold px-7 py-3 font-body ${
-              scrolled
+              isLight
                 ? "bg-[#173128] text-white"
                 : "border border-white/40 text-white"
             }`}

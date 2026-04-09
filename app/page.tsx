@@ -113,7 +113,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
               <div className="lg:col-span-7 relative pb-16 md:pb-0">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
-                  <Image src="/images/stitch/home/about-preview-woodworker.jpg" alt="Artisan woodworker measuring dark oak panel" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 58vw" />
+                  <Image src="/images/stitch/home/about-preview-woodworker.png" alt="Artisan woodworker measuring dark oak panel" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 58vw" />
                 </div>
                 <div className="absolute -bottom-8 -right-4 md:-right-8 w-[38%] hidden sm:block aspect-square overflow-hidden rounded-sm border-[12px] border-[#fdf9f5]">
                   <Image src="/images/stitch/home/about-preview-joinery-detail.jpg" alt="Close-up wood joinery detail" fill className="object-cover" sizes="22vw" />
